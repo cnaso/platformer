@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "platformer"
+version = "0.1.0"
+description = "Platformer game using pygame."
+authors = ["Carl Naso <carl.naso@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pygame = "^2.6.0"
+PyTMX = "^3.32"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
