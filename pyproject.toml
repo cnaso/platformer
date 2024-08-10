@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.8"
 pygame = "^2.6.0"
 PyTMX = "^3.32"
+black = "^24.8.0"
 
 
 [build-system]
