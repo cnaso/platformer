@@ -2,6 +2,7 @@
 Contains event management for the game.
 """
 
+from abc import ABC, abstractmethod
 from enum import Enum, auto
 from typing import Any
 from weakref import WeakKeyDictionary
@@ -39,6 +40,16 @@ class InputEvent(GameEvent):
         self.click_position = click_position
 
 
+class EventListener(ABC):
+    """
+    Event listener base class.
+    """
+
+    @abstractmethod
+    def update(self):
+        pass
+
+
 class EventManager:
     """
     Manages communication between listeners.
@@ -47,7 +58,7 @@ class EventManager:
     def __init__(self) -> None:
         self.listeners = WeakKeyDictionary()
 
-    def register(self, listener: Any) -> None:
+    def register(self, listener: EventListener) -> None:
         """
         Registers a listener for events.
 
@@ -56,7 +67,7 @@ class EventManager:
 
         self.listeners[listener] = 1
 
-    def unregister(self, listener: Any) -> None:
+    def unregister(self, listener: EventListener) -> None:
         """
         Un-registers a listener for events. weakref implementation auto removes non-existing listeners.
 
