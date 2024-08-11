@@ -3,9 +3,6 @@ Tests for the events module.
 """
 
 import gc
-import weakref
-
-import pytest
 
 from platformer.events import EventListener, EventManager
 
